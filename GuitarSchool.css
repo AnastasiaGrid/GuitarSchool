@@ -1,0 +1,663 @@
+:root {
+    --red: #F28B64;
+    --blue: #5290EA;
+    --grey: #F0F0F0;
+    ; 
+}
+* {
+    padding: 0;
+    margin: 0;
+    border: 0; 
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: black;
+}
+
+
+/* Мобильная версия 375px */
+
+.home {
+    height: 320px;
+    background: #F0F0F0;
+    width: 100%;
+    margin-top: 80px;  
+
+}
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--grey);
+    padding-left: 30px;
+    padding-top: 10px;
+}
+
+#hamburger-menu__toggle {
+    opacity: 0;
+}
+.hamburger-menu__btn {
+    display: flex; /* используем flex для центрирования содержимого */
+    align-items: center;  /* центрируем содержимое кнопки */
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
+}
+/* добавляем "гамбургер" */
+.hamburger-menu__btn > span,
+.hamburger-menu__btn > span::before,
+.hamburger-menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #616161;
+
+}
+.hamburger-menu__btn > span::before {
+  content: '';
+  top: -8px;
+}
+.hamburger-menu__btn > span::after {
+  content: '';
+  top: 8px;
+}
+/* контейнер меню */
+.hamburger-menu__box {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    text-align: center;
+    background-color: var(--grey);
+  }
+/* элементы меню */
+.hamburger-menu__item {
+    display: block;
+    padding: 12px 24px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 18px;
+    text-decoration: none;
+    color: black;
+  }
+  .hamburger-menu__item:hover {
+    background-color: #CFD8DC;
+  }
+  #hamburger-menu__toggle:checked ~ .hamburger-menu__btn > span {
+    transform: rotate(45deg);
+  }
+  #hamburger-menu__toggle:checked ~ .hamburger-menu__btn  > span::before {
+    top: 0;
+    transform: rotate(0);
+  }
+  #hamburger-menu__toggle:checked ~ .hamburger-menu__btn  > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  #hamburger-menu__toggle:checked ~ .hamburger-menu__box {
+    visibility: visible;
+    left: 0;
+  }
+
+
+
+
+.home__pic_player {
+    display: none;
+}
+.home__pic_figures {
+    display: none;
+}
+.home__info {
+    padding-top: 50px;
+    padding-left: 20px;
+}
+.contacts-social {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-right: 35px;
+    width: 230px;
+    z-index: 0;
+}
+
+.contacts-social__icon {
+    border: 1px solid var(--blue);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    padding: 10px 10px;
+    text-align: center;
+}
+
+
+.title {
+    font-size: 48px;
+    font-weight: 600;
+    padding-bottom: 10px;
+}
+
+.underline {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 5px;
+    
+}
+.text-block__description {
+    font-size: 16px;
+}
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    
+}
+.button {
+    background-color:#F28B64;
+    width: 150px;
+    height: 50px;
+    color: white;
+    font-size: 18px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 100px;
+    font-size: 14px;
+    cursor: pointer;
+    }
+
+.ask {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 32px;
+    padding-right: 10px;
+    text-decoration: none;
+    font-size: 14px;
+}
+.text-block__buttons_ask img {
+    padding-right: 12px;
+}
+.lessons__title {
+    font-size: 30px;
+    text-align: center;
+}
+
+.lessons__title_underline {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 5px;
+}
+.lessons__blocks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.lessons__blocks img {
+    /* width: 100%; */
+
+}
+.block {
+    background-color: var(--grey);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 360px;
+    height: 360px;
+    border-radius: 10px;
+}
+
+.subtitle {
+    rotate: 90deg;
+    text-align: center;
+}
+
+.lessons-blocks__acustic {
+    background-color: var(--red);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.lessons-blocks__uculele {
+    background-color: var(--blue);
+}
+
+.lessons__achievements {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.achievements {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 250px;
+    padding-bottom: 20px;
+}
+
+/* ОБРАТИТЬ ВНИМАНИЕ! ОТДЕЛЬНЫЙ ПАДИНГБ ТК СЛИПАЕТСЯ ТЕКСТ И КАРТИНКА ПОЧЕМУ ТО, МОЖЕТ НЕ ХВАТАЕТ МЕСТА В КОНТЕНЙЕРЕ */
+.lessons-achievements__hours p{
+    padding-left: 12px;
+}
+.achievements img{
+    width: 80px;
+    height: 80px;
+}
+.num {
+    font-size: 25px;
+    font-weight: 600;
+}
+.education {
+    background-color: var(--grey);
+}
+.education-title__title {
+    text-align: center;
+}
+
+.education-info__title {
+    font-size: 30px;
+    text-align: center;
+}
+.education-info__text {
+    padding: 5px 20px;
+}
+.education-info__buttons {
+    justify-content: center;
+}
+.education-info__buttons_ask img {
+    padding-right: 12px;
+}
+.footer {
+    background-image: url("Grif.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    margin-top: 20px;
+}
+.footer-info__title {
+    font-size: 20px;
+    width: 150px;
+    padding-left: 20px;
+}
+
+.footer-info__contacts {
+    width: 230px;
+    padding-right: 0px;
+    }
+.footer-info__contacts_icon {
+    background-color: #5290EA;
+}
+.footer__img {
+    display: none;
+}
+
+
+
+
+
+@media (min-width: 768px) {
+ 
+   .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 3;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: var(--grey);
+        padding: 16px 40px;
+        box-sizing: border-box;
+    }
+    .hamburger-menu__btn {
+        display: none;
+    }
+    .hamburger-menu__box {
+        display: flex;
+        position: static;
+        padding: 0;
+        height: auto;
+        padding: 0;
+        visibility: visible;
+    }
+    .hamburger-menu__item:hover {
+        background-color: var(--grey);
+    }
+    .home__pic_player {
+        display: block;
+        width: 100%;
+    }
+
+    .home {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        position: relative;
+    }
+
+    .home__info {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: space-around;
+        padding-top: 0px;
+        padding-left: 0px;
+        padding-bottom: 100px;
+        position: relative;
+        z-index: 0;
+    }
+    .home__pic {
+        width: 100%;
+        margin-right: -100px;
+        padding-top: 8px;
+    }
+    .contacts-social__icon {
+        position: relative;
+        transition:  .3s ease;
+        transition-property: background-color;
+    
+    }
+    .contacts-social__icon img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        transition: transform .3s ease;
+    }
+    
+    .contacts-social__icon:hover {
+        background-color:#5290EA;
+    }
+    
+    .contacts-social__icon:hover img {
+        transform: translate(-50%,-50%) scale(1.1) rotate(180deg);
+    }  
+    
+    .title {
+        font-size: 40px;
+    }
+
+    .lessons__title {
+        font-size: 40px;
+        text-align: left;
+        padding-left: 150px;
+    }
+    
+    .lessons__blocks {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .lessons-blocks__electro {
+        margin-right: 30px;
+        margin-bottom: 10px;
+    }
+    .lessons-blocks__acustic {
+        margin-top: 0px;
+        margin-bottom: 10px;
+    }
+    .lessons-blocks__uculele {
+        margin-left: 30px;
+        margin-bottom: 10px;
+    }
+    .lessons__achievements {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        padding: 0 10px;
+    }
+    .education {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        background-color: var(--grey);
+        height: 640px;
+    
+    }
+    .education__info {
+        width: 480px;
+    }
+    .education-title__title {
+        text-align: center;
+
+    }
+    .education-info__title {
+        font-size: 40px;
+        text-align: start;
+        
+    }
+    .education-info__text {
+        padding: 0px;
+        font-size: 18px;
+    }
+    .education-info__buttons {
+        padding-top: 30px;
+        justify-content: start;
+    }
+
+    .footer {
+        background-image: none;
+        margin-top: 0px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .footer__img {
+        display: block;
+        width: 100%; 
+    }
+    .footer__img img {
+        width: 100%;
+    }
+    .footer__block {
+        margin-left: 20px;
+    }
+    .footer-info__title {
+        font-size: 40px;
+        width: auto;
+        padding-left: 0;
+
+    }
+    .footer-info__contacts {
+        justify-content: space-between;
+        width: 230px;
+        padding-right: 0px;
+    }
+    .footer-info__contacts_icon {
+        background-color: var(--grey);
+    }
+
+    .footer-info__contacts_icon {
+        background-color: none;
+    }
+
+
+
+}
+
+@media (min-width: 1400px) {
+    .nav {
+        padding-left: 170px;
+        padding-right: 170px;
+    }
+
+    .home__pic {
+        width: 65%;
+        margin-right: -150px;
+    }
+    .title {
+        font-size: 72px;
+    }
+    .home__info {
+        width: 500px;
+    }
+    .home__info_circle {
+        width: 190px;
+        height: 190px;
+        background: linear-gradient(143.92deg, #ED7B50 14.85%, #488AEA 53.25%, #2C2C2C 85.74%);
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        right: 130px;
+        z-index: -1;
+        opacity: 0.5
+    }
+    .home__info_circle::before {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        background-color: var(--grey);
+        border-radius: 50%;
+        width: 70%;
+        height: 70%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .lessons__title {
+        font-size: 72px;
+        text-align: left;
+        padding-left: 150px;
+    }
+
+    .lessons__achievements {
+        padding-left: 150px;
+    }
+    .lessons__blocks {
+        position: relative;
+    }
+    .lessons-blocks__circle_left {
+        width: 130px;
+        height: 130px;
+        background: linear-gradient(143.92deg, #ED7B50 14.85%, #488AEA 53.25%, #2C2C2C 85.74%);
+        border-radius: 50%;
+        position: absolute;
+        top: 256px;
+        left: 78px;
+        z-index: -1;
+        opacity: 0.5
+    }
+    .lessons-blocks__circle_left::before {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        background-color: var(--grey);
+        border-radius: 50%;
+        width: 70%;
+        height: 70%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .lessons-blocks__circle_right {
+        width: 130px;
+        height: 130px;
+        background: linear-gradient(143.92deg, #ED7B50 14.85%, #488AEA 53.25%, #2C2C2C 85.74%);
+        border-radius: 50%;
+        position: absolute;
+        top: -62px;
+        right: 98px;
+        z-index: -1;
+        opacity: 0.5
+    }
+    .lessons-blocks__circle_right::before {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        background-color: var(--grey);
+        border-radius: 50%;
+        width: 70%;
+        height: 70%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .education__block {
+        position: relative;
+        padding-left: 205px;
+    }
+    .education-title__title {
+        position: relative;
+        z-index: 1;
+    }
+    .education-title__circle_empty {
+        width: 282px;
+        height: 282px;
+        background: linear-gradient(143.92deg, #ED7B50 14.85%, #488AEA 53.25%, #2C2C2C 85.74%);
+        border-radius: 50%;
+        position: absolute;
+        top: -90px;
+        left: 140px;
+        z-index: 0;
+        opacity: 0.5
+    }
+    .education-title__circle_empty::before {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        background-color: var(--grey);
+        border-radius: 50%;
+        width: 70%;
+        height: 70%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .education-title__circle_hatching {
+        width: 230px;
+        height: 230px;
+        background: linear-gradient(143.92deg, rgba(237, 123, 80, 0.4) 14.85%, rgba(72, 138, 234, 0.4) 53.25%, rgba(44, 44, 44, 0.4) 85.74%);
+        border-radius: 50%;
+        position: absolute;
+        top: -28px;
+        left: 50px;
+        z-index: 0;
+        opacity: 1;
+        /* ШТРИХОВКА ВНУТРИ КРУГА НЕ ПОЛУЧИЛАСЬ */
+    }
+
+
+
+    /* .home__circle {
+        width: 200px;
+        height: 200px;
+        z-index: 2;
+        top: 460px;
+        right: -100px;
+        clip-path: inset(0 99px 100px 0);
+    } */
+}
+
+
+
+
+
