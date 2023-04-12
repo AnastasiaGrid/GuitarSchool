@@ -1,2 +1,3 @@
 # GuitarSchool
-landing page html/css
+Guitar School.
+landing page html/css.
